@@ -25,5 +25,4 @@ class ofApp : public ofBaseApp{
 
     vector<Bubble> bubbles;
     ofVec2f G, W;
-    float angle;
 };

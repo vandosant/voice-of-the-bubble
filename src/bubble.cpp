@@ -14,6 +14,8 @@ void Bubble::setup(ofVec2f l, float m) {
 }
 
 void Bubble::update() {
+    float x = ofMap(sin(angle), -1, 1, -0.1, 0.1);
+    applyForce(ofVec2f(x, 0));
     velocity = velocity + acceleration;
     location = location + velocity;
     if (velocity.x > maxVelocity) {
@@ -22,6 +24,7 @@ void Bubble::update() {
     if (velocity.y > maxVelocity) {
         velocity.y = maxVelocity;
     }
+    angle += 0.05;
 }
 
 void Bubble::display() {

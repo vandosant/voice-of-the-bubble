@@ -2,7 +2,8 @@
 
 bool isOutsideWindow(Bubble b)
 {
-    return (b.location.x > 100);
+    return (b.location.x > ofGetWindowWidth()) ||
+    (b.location.y > ofGetWindowHeight());
 }
 
 //--------------------------------------------------------------
@@ -27,22 +28,20 @@ void ofApp::update(){
         b.setup(ofVec2f(x, y), ofRandom(10, 20));
         bubbles.push_back(b);
     }
-    float x = ofMap(sin(angle), -1, 1, -0.1, 0.1);
+
     for (auto &i: bubbles) {
         i.applyForce(G);
         i.applyForce(W);
-        i.applyForce(ofVec2f(x, 0));
         i.update();
     }
     bubbles.erase( std::remove_if( bubbles.begin(), bubbles.end(), isOutsideWindow ), bubbles.end() );
-    angle += 0.05;
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofBackground(0);
-    for (int i = 0; i < 200; i++) {
-        bubbles[i].display();
+    for (auto &i: bubbles) {
+        i.display();
     }
 }
 
