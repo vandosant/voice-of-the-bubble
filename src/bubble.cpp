@@ -30,6 +30,7 @@ void Bubble::update() {
 void Bubble::display() {
     ofSetColor(color);
     ofFill();
+    ofSetCircleResolution(22 + (22 % (int)mass));
     ofDrawCircle(location.x,location.y,mass);
 }
 

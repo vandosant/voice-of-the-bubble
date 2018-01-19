@@ -1,7 +1,6 @@
 #include "ofApp.h"
 
-bool isOutsideWindow(Bubble b)
-{
+bool isOutsideWindow(Bubble b) {
     return (b.location.x > ofGetWindowWidth()) ||
     (b.location.y > ofGetWindowHeight());
 }
@@ -15,6 +14,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
+
     if ((int)ofGetElapsedTimeMillis() % 20 == 0) {
         Bubble b;
         int x = 0;
@@ -34,6 +34,7 @@ void ofApp::update(){
         i.applyForce(W);
         i.update();
     }
+
     bubbles.erase( std::remove_if( bubbles.begin(), bubbles.end(), isOutsideWindow ), bubbles.end() );
 }
 
@@ -67,7 +68,10 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
+    bubbles.erase( std::remove_if( bubbles.begin(), bubbles.end(), [&](Bubble &b) {
+        ofVec2f mouseLocation = ofVec2f(x, y);
+        return b.location.distance(mouseLocation) < b.mass;
+    }), bubbles.end() );
 }
 
 //--------------------------------------------------------------
@@ -96,6 +100,6 @@ void ofApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo){
 
 }
