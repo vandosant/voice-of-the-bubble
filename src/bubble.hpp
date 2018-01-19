@@ -25,7 +25,7 @@ class Bubble {
     ofVec2f velocity = ofVec2f(0, 0);
     ofVec2f acceleration = ofVec2f(0, 0);
     float maxVelocity = 2;
-    float angle = 0;
+    float angle = ofRandom(0, 2);
 
     Bubble() { };
 

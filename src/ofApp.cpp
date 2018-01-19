@@ -16,19 +16,17 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     if ((int)ofGetElapsedTimeMillis() % 20 == 0) {
-        for (int i = 0; i < 2; i++) {
-            Bubble b;
-            int x = 0;
-            int y = 0;
-            if (i % 2 == 0) {
-                x = ofRandom(0, ofGetWindowWidth());
-            }
-            if (i % 2 != 0) {
-                y = ofRandom(0, ofGetWindowHeight());
-            }
-            b.setup(ofVec2f(x, y), ofRandom(20, 40));
-            bubbles.push_back(b);
+        Bubble b;
+        int x = 0;
+        int y = 0;
+        if (ofRandom(1) > 0.5) {
+            x = ofRandom(0, ofGetWindowWidth());
+        } else {
+            y = ofRandom(0, ofGetWindowHeight());
+
         }
+        b.setup(ofVec2f(x, y), ofRandom(20, 40));
+        bubbles.push_back(b);
     }
 
     for (auto &i: bubbles) {
