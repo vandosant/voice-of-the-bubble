@@ -14,7 +14,6 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
     if ((int)ofGetElapsedTimeMillis() % 20 == 0) {
         Bubble b;
         int x = 0;
@@ -29,10 +28,10 @@ void ofApp::update(){
         bubbles.push_back(b);
     }
 
-    for (auto &i: bubbles) {
-        i.applyForce(G);
-        i.applyForce(W);
-        i.update();
+    for (auto &b: bubbles) {
+        b.applyForce(G);
+        b.applyForce(W);
+        b.update();
     }
 
     bubbles.erase( std::remove_if( bubbles.begin(), bubbles.end(), isOutsideWindow ), bubbles.end() );
@@ -41,8 +40,11 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofBackground(0);
-    for (auto &i: bubbles) {
-        i.display();
+    for (auto &b: bubbles) {
+        b.display();
+    }
+    for (auto &p: particles) {
+        p.display();
     }
 }
 
@@ -68,8 +70,22 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-    bubbles.erase( std::remove_if( bubbles.begin(), bubbles.end(), [&](Bubble &b) {
-        ofVec2f mouseLocation = ofVec2f(x, y);
+    ofVec2f mouseLocation = ofVec2f(x, y);
+    for (auto &b: bubbles) {
+        if (b.location.distance(mouseLocation) < b.mass) {
+            bubblesForRemoval.push_back(b);
+        }
+    }
+
+    for (auto &b: bubblesForRemoval) {
+        ParticleSystem p;
+        p.setup(b.location, b.mass);
+        particles.push_back(p);
+    }
+
+    bubblesForRemoval.clear();
+
+    bubbles.erase( remove_if( bubbles.begin(), bubbles.end(), [&](Bubble &b) {
         return b.location.distance(mouseLocation) < b.mass;
     }), bubbles.end() );
 }

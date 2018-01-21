@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "bubble.hpp"
+#include "particleSystem.hpp"
 #include <iostream>
 
 class ofApp : public ofBaseApp{
@@ -24,5 +25,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
     vector<Bubble> bubbles;
+    vector<Bubble> bubblesForRemoval;
+    vector<ParticleSystem> particles;
     ofVec2f G, W;
 };
