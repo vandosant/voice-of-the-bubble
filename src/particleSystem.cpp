@@ -10,18 +10,31 @@
 
 void ParticleSystem::setup(ofVec2f l, float m) {
     location = l;
-    mass = m;
+    for (int i = 0; i < 360; i+=10) {
+        Particle p;
+        ofVec2f v = ofVec2f(cos(i), sin(i));
+        ofVec2f a = ofVec2f(cos(i)*2, sin(i)*2);
+        ofVec2f particleLocation = ofVec2f(location.x + (cos(i)*m), location.y + sin(i)*m);
+        p.setup(particleLocation, v, 255);
+        p.applyForce(a);
+        particles.push_back(p);
+    }
 }
 
 void ParticleSystem::update() {
-    mass += 0.05;
+    for (auto &p: particles) {
+        p.update();
+    }
+
+    ticksLeft--;
 }
 
 void ParticleSystem::display() {
-    ofSetColor(255,255,255);
-    ofDrawLine(location.x,location.y, location.x + mass, location.y + mass);
+    for (auto &p: particles) {
+        p.display();
+    }
 }
 
-void ParticleSystem::applyForce(ofVec2f force) {
-
+bool ParticleSystem::isDead() {
+    return ticksLeft <= 0;
 }

@@ -10,20 +10,22 @@
 #define _PARTICLE_SYSTEM
 
 #include "ofMain.h"
+#include "particle.hpp"
 
 class ParticleSystem {
-public:
-    
-    void setup(ofVec2f l, float m);
-    void update();
-    void display();
-    void applyForce(ofVec2f force);
-    
-    float mass = 0;
-    ofVec2f location = ofVec2f(0, 0);
-    
-    ParticleSystem() { };
-    
-private:
+    public:
+        void setup(ofVec2f l, float m);
+        void update();
+        void display();
+        bool isDead();
+
+        float mass = 0;
+        float ticksLeft = 255;
+        ofVec2f location = ofVec2f(0, 0);
+        vector<Particle> particles;
+
+        ParticleSystem() { };
+
+    private:
 };
 #endif /* particleSyste_hpp */

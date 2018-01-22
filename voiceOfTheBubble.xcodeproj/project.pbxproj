@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A13373DA200481AA0000D188 /* bubble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A13373D8200481AA0000D188 /* bubble.cpp */; };
+		A1AB02F12015078B00BF706E /* particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1AB02EF2015078B00BF706E /* particle.cpp */; };
 		A1BE71F220142FEE00AF55BE /* particleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1BE71F020142FEE00AF55BE /* particleSystem.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
@@ -46,6 +47,8 @@
 /* Begin PBXFileReference section */
 		A13373D8200481AA0000D188 /* bubble.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bubble.cpp; sourceTree = "<group>"; };
 		A13373D9200481AA0000D188 /* bubble.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bubble.hpp; sourceTree = "<group>"; };
+		A1AB02EF2015078B00BF706E /* particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = particle.cpp; sourceTree = "<group>"; };
+		A1AB02F02015078B00BF706E /* particle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = particle.hpp; sourceTree = "<group>"; };
 		A1BE71F020142FEE00AF55BE /* particleSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = particleSystem.cpp; sourceTree = "<group>"; };
 		A1BE71F120142FEE00AF55BE /* particleSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = particleSystem.hpp; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -113,6 +116,8 @@
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
 				A1BE71F020142FEE00AF55BE /* particleSystem.cpp */,
 				A1BE71F120142FEE00AF55BE /* particleSystem.hpp */,
+				A1AB02EF2015078B00BF706E /* particle.cpp */,
+				A1AB02F02015078B00BF706E /* particle.hpp */,
 				A13373D8200481AA0000D188 /* bubble.cpp */,
 				A13373D9200481AA0000D188 /* bubble.hpp */,
 			);
@@ -217,6 +222,7 @@
 			files = (
 				A1BE71F220142FEE00AF55BE /* particleSystem.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				A1AB02F12015078B00BF706E /* particle.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				A13373DA200481AA0000D188 /* bubble.cpp in Sources */,
 			);

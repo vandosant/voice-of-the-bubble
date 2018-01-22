@@ -24,7 +24,7 @@ void ofApp::update(){
             y = ofRandom(0, ofGetWindowHeight());
 
         }
-        b.setup(ofVec2f(x, y), ofRandom(20, 40));
+        b.setup(ofVec2f(x, y), ofRandom(25, 40));
         bubbles.push_back(b);
     }
 
@@ -34,7 +34,14 @@ void ofApp::update(){
         b.update();
     }
 
+    for (auto &p: particles) {
+        p.update();
+    }
+
     bubbles.erase( std::remove_if( bubbles.begin(), bubbles.end(), isOutsideWindow ), bubbles.end() );
+    particles.erase( std::remove_if( particles.begin(), particles.end(), [&](ParticleSystem &p) {
+        return p.isDead();
+    }), particles.end() );
 }
 
 //--------------------------------------------------------------
