@@ -1,8 +1,8 @@
 #include "ofApp.h"
 
 bool isOutsideWindow(Bubble b) {
-    return (b.location.x > ofGetWindowWidth()) ||
-    (b.location.y > ofGetWindowHeight());
+    return (b.location.x > ofGetWindowWidth() + b.mass) ||
+    (b.location.y > ofGetWindowHeight() + b.mass);
 }
 
 //--------------------------------------------------------------
@@ -18,13 +18,14 @@ void ofApp::update(){
         Bubble b;
         int x = 0;
         int y = 0;
+        float mass = ofRandom(25, 40);
         if (ofRandom(1) > 0.5) {
             x = ofRandom(0, ofGetWindowWidth());
         } else {
             y = ofRandom(0, ofGetWindowHeight());
 
         }
-        b.setup(ofVec2f(x, y), ofRandom(25, 40));
+        b.setup(ofVec2f(x, y), mass);
         bubbles.push_back(b);
     }
 
