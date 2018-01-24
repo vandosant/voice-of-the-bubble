@@ -20,7 +20,7 @@ class ParticleSystem {
         bool isDead();
 
         float mass = 0;
-        float ticksLeft = 255;
+        float ticksLeft = 100;
         ofVec2f location = ofVec2f(0, 0);
         vector<Particle> particles;
 
@@ -28,4 +28,4 @@ class ParticleSystem {
 
     private:
 };
-#endif /* particleSyste_hpp */
+#endif /* particleSystem_hpp */

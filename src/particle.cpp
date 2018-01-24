@@ -21,7 +21,7 @@ void Particle::update() {
 }
 
 void Particle::display() {
-    ofSetColor(ofColor(255,255,255,lifespan));
+    ofSetColor(ofColor(255, 255, 255, ofMap(lifespan, 0, 100, 0, 255)));
     ofDrawLine(location.x,location.y, location.x + mass, location.y + mass);
 }
 
