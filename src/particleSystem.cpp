@@ -10,12 +10,13 @@
 
 void ParticleSystem::setup(ofVec2f l, float m) {
     location = l;
+    mass = m;
     for (int i = 0; i < 360; i+=10) {
         Particle p;
         ofVec2f v = ofVec2f(cos(i)/2, sin(i)/2);
         ofVec2f a = ofVec2f(cos(i)/2, sin(i)/2);
         ofVec2f particleLocation = ofVec2f(location.x + (cos(i)*m), location.y + sin(i)*m);
-        p.setup(particleLocation, v, 100);
+        p.setup(particleLocation, v, lifespan);
         p.applyForce(a);
         particles.push_back(p);
     }
@@ -26,7 +27,7 @@ void ParticleSystem::update() {
         p.update();
     }
 
-    ticksLeft--;
+    lifespan--;
 }
 
 void ParticleSystem::display() {
@@ -36,5 +37,5 @@ void ParticleSystem::display() {
 }
 
 bool ParticleSystem::isDead() {
-    return ticksLeft <= 0;
+    return lifespan <= 0;
 }

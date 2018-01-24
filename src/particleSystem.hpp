@@ -20,7 +20,7 @@ class ParticleSystem {
         bool isDead();
 
         float mass = 0;
-        float ticksLeft = 100;
+        float lifespan = 100;
         ofVec2f location = ofVec2f(0, 0);
         vector<Particle> particles;
 
