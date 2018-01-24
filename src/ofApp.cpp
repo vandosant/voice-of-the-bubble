@@ -87,7 +87,7 @@ void ofApp::mousePressed(int x, int y, int button){
 
     for (auto &b: bubblesForRemoval) {
         ParticleSystem p;
-        p.setup(b.location, b.mass);
+        p.setup(b.location, b.mass, b.velocity);
         particles.push_back(p);
     }
 

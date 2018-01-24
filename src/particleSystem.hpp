@@ -14,7 +14,7 @@
 
 class ParticleSystem {
     public:
-        void setup(ofVec2f l, float m);
+        void setup(ofVec2f l, float m, ofVec2f currentVelocity);
         void update();
         void display();
         bool isDead();

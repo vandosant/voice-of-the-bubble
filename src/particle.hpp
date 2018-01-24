@@ -14,11 +14,12 @@
 class Particle {
 public:
     
-    void setup(ofVec2f l, ofVec2f v, float life);
+    void setup(ofVec2f l, ofVec2f v, float life, float a);
     void update();
     void display();
     void applyForce(ofVec2f force);
     
+    float angle = 0;
     float mass = 4;
     float lifespan = 0;
     ofVec2f location = ofVec2f(0, 0);
