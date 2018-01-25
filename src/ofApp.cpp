@@ -35,14 +35,15 @@ void ofApp::update(){
         b.update();
     }
 
-    for (auto &p: particles) {
+    for (auto &p: particleSystems) {
+
         p.update();
     }
 
     bubbles.erase( std::remove_if( bubbles.begin(), bubbles.end(), isOutsideWindow ), bubbles.end() );
-    particles.erase( std::remove_if( particles.begin(), particles.end(), [&](ParticleSystem &p) {
+    particleSystems.erase( std::remove_if( particleSystems.begin(), particleSystems.end(), [&](ParticleSystem &p) {
         return p.isDead();
-    }), particles.end() );
+    }), particleSystems.end() );
 }
 
 //--------------------------------------------------------------
@@ -51,7 +52,7 @@ void ofApp::draw(){
     for (auto &b: bubbles) {
         b.display();
     }
-    for (auto &p: particles) {
+    for (auto &p: particleSystems) {
         p.display();
     }
 }
@@ -88,7 +89,7 @@ void ofApp::mousePressed(int x, int y, int button){
     for (auto &b: bubblesForRemoval) {
         ParticleSystem p;
         p.setup(b.location, b.mass, b.velocity);
-        particles.push_back(p);
+        particleSystems.push_back(p);
     }
 
     bubblesForRemoval.clear();

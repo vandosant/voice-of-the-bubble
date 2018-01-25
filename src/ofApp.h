@@ -26,6 +26,6 @@ class ofApp : public ofBaseApp{
 
     vector<Bubble> bubbles;
     vector<Bubble> bubblesForRemoval;
-    vector<ParticleSystem> particles;
+    vector<ParticleSystem> particleSystems;
     ofVec2f G, W;
 };

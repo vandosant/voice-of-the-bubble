@@ -32,6 +32,5 @@ void Particle::display() {
 }
 
 void Particle::applyForce(ofVec2f force) {
-    ofVec2f f = force / mass;
-    acceleration = acceleration + f;
+    acceleration = acceleration + force;
 }

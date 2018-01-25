@@ -8,17 +8,18 @@
 
 #include "particleSystem.hpp"
 
-void ParticleSystem::setup(ofVec2f l, float m, ofVec2f currentVelocity) {
+void ParticleSystem::setup(ofVec2f l, float r, ofVec2f currentVelocity) {
     location = l;
-    mass = m;
+    radius = r;
     float modifier = 18;
     for (int i = 0; i <= 360; i+=modifier) {
         Particle p;
-        ofVec2f v = currentVelocity + ofVec2f(cos(i)/5, sin(i)/5);
-        ofVec2f a = ofVec2f(cos(i)/5, sin(i)/5);
-        ofVec2f particleLocation = ofVec2f(location.x + (cos(i)*m), location.y + sin(i)*m);
-        p.setup(particleLocation, v, lifespan, ofRandom(0, 90));
-        p.applyForce(a);
+        ofVec2f startingVelocity = ofVec2f(cos(i), sin(i));
+        ofVec2f v = startingVelocity * 0.4;
+        float x = location.x + cos(i) * radius + ofRandom(-5, 5);
+        float y = location.y + sin(i) * radius + ofRandom(-5, 5);
+        float angle = ofRandom(0, 90);
+        p.setup(ofVec2f(x, y), v, lifespan, angle);
         particles.push_back(p);
     }
 }
@@ -34,6 +35,12 @@ void ParticleSystem::update() {
 void ParticleSystem::display() {
     for (auto &p: particles) {
         p.display();
+    }
+}
+
+void ParticleSystem::applyForce(ofVec2f f) {
+    for (auto &p: particles) {
+        p.applyForce(f);
     }
 }
 

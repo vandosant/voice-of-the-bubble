@@ -17,9 +17,10 @@ class ParticleSystem {
         void setup(ofVec2f l, float m, ofVec2f currentVelocity);
         void update();
         void display();
+        void applyForce(ofVec2f f);
         bool isDead();
 
-        float mass = 0;
+        float radius = 0;
         float lifespan = 100;
         ofVec2f location = ofVec2f(0, 0);
         vector<Particle> particles;
