@@ -14,8 +14,8 @@ void ParticleSystem::setup(ofVec2f l, float m, ofVec2f currentVelocity) {
     float modifier = 18;
     for (int i = 0; i <= 360; i+=modifier) {
         Particle p;
-        ofVec2f v = currentVelocity + ofVec2f(cos(i)/2, sin(i)/2);
-        ofVec2f a = ofVec2f(cos(i)/2, sin(i)/2);
+        ofVec2f v = currentVelocity + ofVec2f(cos(i)/5, sin(i)/5);
+        ofVec2f a = ofVec2f(cos(i)/5, sin(i)/5);
         ofVec2f particleLocation = ofVec2f(location.x + (cos(i)*m), location.y + sin(i)*m);
         p.setup(particleLocation, v, lifespan, ofRandom(0, 90));
         p.applyForce(a);

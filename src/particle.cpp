@@ -19,7 +19,7 @@ void Particle::update() {
     velocity = velocity + acceleration;
     location = location + velocity;
     lifespan--;
-    angle+=5;
+    angle+=ofMap(velocity.x+velocity.y, 0, 2, 0, 15);
 }
 
 void Particle::display() {
