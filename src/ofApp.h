@@ -27,4 +27,7 @@ class ofApp : public ofxiOSApp {
     vector<Bubble> bubblesForRemoval;
     vector<ParticleSystem> particleSystems;
     ofVec2f G, W;
+    ofVec2f origin;
+    int appOrientation;
+    int minX, maxX, minY, maxY;
 };
