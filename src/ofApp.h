@@ -5,13 +5,13 @@
 #include "particleSystem.hpp"
 
 class ofApp : public ofxiOSApp {
-	
+
     public:
         void setup();
         void update();
         void draw();
         void exit();
-	
+
         void touchDown(ofTouchEventArgs & touch);
         void touchMoved(ofTouchEventArgs & touch);
         void touchUp(ofTouchEventArgs & touch);
@@ -28,5 +28,3 @@ class ofApp : public ofxiOSApp {
     vector<ParticleSystem> particleSystems;
     ofVec2f G, W;
 };
-
-
