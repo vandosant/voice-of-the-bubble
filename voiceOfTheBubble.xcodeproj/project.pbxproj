@@ -18,9 +18,9 @@
 		678E130E17951540005B6D19 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 678E130D17951540005B6D19 /* Default@2x.png */; };
 		678E131017951549005B6D19 /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 678E130F17951549005B6D19 /* Default-568h@2x~iphone.png */; };
 		67DFA53619F92A69003B3434 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67DFA53419F92A5E003B3434 /* Accelerate.framework */; };
-		A1C96F11203050A700FEC3C4 /* bubble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1C96F0B203050A700FEC3C4 /* bubble.cpp */; };
-		A1C96F12203050A700FEC3C4 /* particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1C96F0D203050A700FEC3C4 /* particle.cpp */; };
-		A1C96F13203050A700FEC3C4 /* particleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1C96F0F203050A700FEC3C4 /* particleSystem.cpp */; };
+		A11924B22030578D0071B896 /* bubble.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A11924AC2030578D0071B896 /* bubble.cpp */; };
+		A11924B32030578D0071B896 /* particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A11924AE2030578D0071B896 /* particle.cpp */; };
+		A11924B42030578D0071B896 /* particleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A11924B02030578D0071B896 /* particleSystem.cpp */; };
 		BB16EBD20F2B2A9500518274 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD10F2B2A9500518274 /* OpenGLES.framework */; };
 		BB16EBD90F2B2AB500518274 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB16EBD80F2B2AB500518274 /* QuartzCore.framework */; };
 		BBE5EAB80F49AD8400F28951 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE5EAB70F49AD8400F28951 /* AudioToolbox.framework */; };
@@ -64,12 +64,12 @@
 		678E130D17951540005B6D19 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "bin/data/Default@2x.png"; sourceTree = "<group>"; };
 		678E130F17951549005B6D19 /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x~iphone.png"; path = "bin/data/Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		67DFA53419F92A5E003B3434 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		A1C96F0B203050A700FEC3C4 /* bubble.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bubble.cpp; path = ../../../../../of_v0.9.8_osx_release/apps/myApps/voiceOfTheBubble/src/bubble.cpp; sourceTree = "<group>"; };
-		A1C96F0C203050A700FEC3C4 /* bubble.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = bubble.hpp; path = ../../../../../of_v0.9.8_osx_release/apps/myApps/voiceOfTheBubble/src/bubble.hpp; sourceTree = "<group>"; };
-		A1C96F0D203050A700FEC3C4 /* particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = particle.cpp; path = ../../../../../of_v0.9.8_osx_release/apps/myApps/voiceOfTheBubble/src/particle.cpp; sourceTree = "<group>"; };
-		A1C96F0E203050A700FEC3C4 /* particle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = particle.hpp; path = ../../../../../of_v0.9.8_osx_release/apps/myApps/voiceOfTheBubble/src/particle.hpp; sourceTree = "<group>"; };
-		A1C96F0F203050A700FEC3C4 /* particleSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = particleSystem.cpp; path = ../../../../../of_v0.9.8_osx_release/apps/myApps/voiceOfTheBubble/src/particleSystem.cpp; sourceTree = "<group>"; };
-		A1C96F10203050A700FEC3C4 /* particleSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = particleSystem.hpp; path = ../../../../../of_v0.9.8_osx_release/apps/myApps/voiceOfTheBubble/src/particleSystem.hpp; sourceTree = "<group>"; };
+		A11924AC2030578D0071B896 /* bubble.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bubble.cpp; sourceTree = "<group>"; };
+		A11924AD2030578D0071B896 /* bubble.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bubble.hpp; sourceTree = "<group>"; };
+		A11924AE2030578D0071B896 /* particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = particle.cpp; sourceTree = "<group>"; };
+		A11924AF2030578D0071B896 /* particle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = particle.hpp; sourceTree = "<group>"; };
+		A11924B02030578D0071B896 /* particleSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = particleSystem.cpp; sourceTree = "<group>"; };
+		A11924B12030578D0071B896 /* particleSystem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = particleSystem.hpp; sourceTree = "<group>"; };
 		BB16EBD10F2B2A9500518274 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BB16EBD80F2B2AB500518274 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BB24DDC910DA781C00E9C588 /* ofxiOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ofxiOS-Info.plist"; sourceTree = "<group>"; };
@@ -212,15 +212,15 @@
 		E4D8936A11527B74007E1F53 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				A11924AC2030578D0071B896 /* bubble.cpp */,
+				A11924AD2030578D0071B896 /* bubble.hpp */,
+				A11924AE2030578D0071B896 /* particle.cpp */,
+				A11924AF2030578D0071B896 /* particle.hpp */,
+				A11924B02030578D0071B896 /* particleSystem.cpp */,
+				A11924B12030578D0071B896 /* particleSystem.hpp */,
 				E4D8936B11527B74007E1F53 /* main.mm */,
 				E4D8936D11527B74007E1F53 /* ofApp.mm */,
 				E4D8936C11527B74007E1F53 /* ofApp.h */,
-				A1C96F0B203050A700FEC3C4 /* bubble.cpp */,
-				A1C96F0C203050A700FEC3C4 /* bubble.hpp */,
-				A1C96F0D203050A700FEC3C4 /* particle.cpp */,
-				A1C96F0E203050A700FEC3C4 /* particle.hpp */,
-				A1C96F0F203050A700FEC3C4 /* particleSystem.cpp */,
-				A1C96F10203050A700FEC3C4 /* particleSystem.hpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -327,10 +327,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4D8936E11527B74007E1F53 /* main.mm in Sources */,
-				A1C96F12203050A700FEC3C4 /* particle.cpp in Sources */,
+				A11924B32030578D0071B896 /* particle.cpp in Sources */,
 				E4D8936F11527B74007E1F53 /* ofApp.mm in Sources */,
-				A1C96F13203050A700FEC3C4 /* particleSystem.cpp in Sources */,
-				A1C96F11203050A700FEC3C4 /* bubble.cpp in Sources */,
+				A11924B42030578D0071B896 /* particleSystem.cpp in Sources */,
+				A11924B22030578D0071B896 /* bubble.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
