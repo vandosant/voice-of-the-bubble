@@ -19,11 +19,11 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    if ((int)ofGetElapsedTimeMillis() % 20 == 0) {
+    if ((int)ofGetElapsedTimeMillis() % 10 == 0) {
         Bubble b;
         int x = origin.x;
         int y = origin.y;
-        float mass = ofRandom(20, 35);
+        float mass = ofRandom(20, 65);
         if (ofRandom(1) > 0.5) {
             x = ofRandom(minX,maxX);
         } else {
@@ -90,7 +90,24 @@ void ofApp::touchDown(ofTouchEventArgs & touch){
 
 //--------------------------------------------------------------
 void ofApp::touchMoved(ofTouchEventArgs & touch){
+    ofVec2f mouseLocation = ofVec2f(touch.x, touch.y);
+    for (auto &b: bubbles) {
+        if (b.location.distance(mouseLocation) < b.mass) {
+            bubblesForRemoval.push_back(b);
+        }
+    }
 
+    for (auto &b: bubblesForRemoval) {
+        ParticleSystem p;
+        p.setup(b.location, b.mass, b.velocity);
+        particleSystems.push_back(p);
+    }
+
+    bubblesForRemoval.clear();
+
+    bubbles.erase( remove_if( bubbles.begin(), bubbles.end(), [&](Bubble &b) {
+        return b.location.distance(mouseLocation) < b.mass;
+    }), bubbles.end() );
 }
 
 //--------------------------------------------------------------
